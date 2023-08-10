@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "server for sBlogs",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "nodemon -r esm server.js",
     "server": "nodemon server.js"
@@ -10,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "esm": "^3.2.25",

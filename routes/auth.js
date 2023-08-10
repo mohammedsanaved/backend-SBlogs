@@ -1,8 +1,7 @@
 import express from "express";
+import { register } from "../controllers/userController.js";
 
 const router = express.Router();
 
-router.post("/api/register", (req, res) => {
-  console.log("register EndPOint", req.body);
-});
+router.route("/register").post(register);
 export default router;
