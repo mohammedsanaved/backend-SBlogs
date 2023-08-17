@@ -8,24 +8,11 @@ import bodyParser from "body-parser";
 // require("dotenv").config();
 import "dotenv/config";
 const app = express();
-import auth from "./routes/auth.js";
+import auth from "./routes/authRoutes.js";
 // db
 
 connectDB();
 export const server = "http://localhost:8000";
-// mongoose
-//   .connect(
-//     `mongodb+srv://mohammedsanaved:mohammedsanaved@sblog.l2yykvj.mongodb.net/?retryWrites=true&w=majority`,
-//     {
-//       useNewUrlParser: true,
-//       // useFindAndModify: false,
-//       useUnifiedTopology: true,
-//       // useCreateIndex: true,
-//     }
-//   )
-//   .then(() => console.log("DB connected"))
-//   .catch((err) => console.log("DB connection error", err));
-
 // middlewares
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json({ limit: "5mb" }));
@@ -40,7 +27,6 @@ app.use(
 app.use("/api", auth);
 
 // autoload routes
-// readdirSync("./routes").map((r) => app.use("/api", require(`./routes/${r}`)));
 
 const port = process.env.PORT || 8000;
 
